@@ -85,10 +85,10 @@ class Cd(Media):#la classe Cd extend the Media class
 
     def __init__(self):
         return
-    def __init(self,id,title,price):
+    def __init__(self,id,title,price):
         super().__init__(id,title,price)
 
-    def __init(self,id,title,price,nbTracks):
+    def __init__(self,id,title,price,nbTracks):
         super().__init__(id,title,price)
         self.nbTracks=nbTracks
 
@@ -205,5 +205,42 @@ if __name__== '__main__':
     m1.getAuthors().append(Author(1,"Alex","nom"))
     b1=Book(0,"Java pour les Nuls",10,120)
     print(b1.getNetPrice())
-    print(Dvd(0,"Java pour les Nuls en Dvd",10,2).getTitle())
+    d1=Dvd(0,"Java pour les Nuls en Dvd",10,2)
+    print(d1.getTitle())
     print(Dvd(1,"Java pour les Nuls en Dvd",10,2).getNetPrice())
+    c1=Cd(0,"Java pour les Nuls en Cd",10,2)
+    tabM=[Media(0,"Java pour les Nuls",10), b1,c1,d1,Cd(0,"Java pour les Nuls en Cd",10,2)]
+    for elem in tabM:
+        print(elem.getTitle(),f"au prix de {elem.getNetPrice()}")
+    tabM=[Media(0,"Java pour les Nuls",10), b1,c1,d1,Cd(0,"Java pour les Nuls en Cd",10,2)]
+    for elem in tabM:
+        print(elem.getTitle(),f"au prix de {elem.getNetPrice()}")
+
+    #############################################################################
+    #trace d'execution#
+    ###################
+    #Java pour les Nuls
+    #12.0
+    #0
+    #Boris
+    #Alex
+    #Moustafa
+    #Florent
+    #Alex
+    #[Boris, Alex, Alex]
+    #{'Boris'}
+    #{'Alex'}
+    #{'Alex'}
+    #10.5
+    #Java pour les Nuls en Dvd
+    #9.600000000000001
+    #Java pour les Nuls au prix de 12.0
+    #Java pour les Nuls en Cd au prix de 12.0
+    #Java pour les Nuls en Dvd au prix de 9.600000000000001
+    #Java pour les Nuls en Cd au prix de 12.0
+    #Java pour les Nuls au prix de 12.0
+    #Java pour les Nuls au prix de 10.5
+    #Java pour les Nuls en Cd au prix de 12.0
+    #Java pour les Nuls en Dvd au prix de 9.600000000000001
+    #Java pour les Nuls en Cd au prix de 12.0
+
