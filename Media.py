@@ -110,7 +110,7 @@ class Dvd(Media):#la classe Dvd extend the Media class
 
     def getNetPrice(self):
         return (super().getPrice()*1.2)*(1.0-0.2)
-    
+
 ################
 #  Pattern C   #
 ################
@@ -149,7 +149,7 @@ class Author:
 
 #############
 # pattern B #
-#############
+############# 
 ########################################################################################################
 # Classe Publisher #
 ####################
