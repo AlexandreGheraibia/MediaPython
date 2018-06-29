@@ -68,24 +68,24 @@ class Book(Media):
     def getNbPages(self):
         return self.nbPages
 
-    ##################################################################################################################
-    #        Classe Cd            #
-    ###############################
-    class Cd(Media):#la classe Cd extend the Media class
-        def getNbTracks(self):
-            return self.nbTracks
+##################################################################################################################
+#        Classe Cd            #
+###############################
+ class Cd(Media):#la classe Cd extend the Media class
+    def getNbTracks(self):
+        return self.nbTracks
 
-        def setNbTracks(self,nbTracks):
-            self.nbTracks=nbTracks
+    def setNbTracks(self,nbTracks):
+        self.nbTracks=nbTracks
 
-        def __init__(self):
-            return
-        def __init(self,id,title,price):
-            super().__init__(id,title,price)
+    def __init__(self):
+        return
+    def __init(self,id,title,price):
+        super().__init__(id,title,price)
 
-        def __init(self,id,title,price,nbTracks):
-            super().__init__(id,title,price)
-            self.nbTracks=nbTracks
+    def __init(self,id,title,price,nbTracks):
+        super().__init__(id,title,price)
+        self.nbTracks=nbTracks
 ##################################################################################################################
 #        Classe Dvd            #
 ################################
