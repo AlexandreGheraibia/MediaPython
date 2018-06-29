@@ -185,6 +185,7 @@ class Publisher:
 
 if __name__== '__main__':
     m1=Media(0,"Java pour les Nuls",10)
+    print(f"exemple affichage")
     print(f"\r {m1.getTitle()}\n {m1.getNetPrice()}\n {m1.getId()}")
     a1=Author(0,"Boris",'nom')
     m1.getAuthors().append(a1)
@@ -198,6 +199,7 @@ if __name__== '__main__':
     #suppresion elem dans une liste
     ####################################
     del m1.getAuthors()[2:4]
+    print(f"\r\nexemple de parcours")
     print(m1.getAuthors())
     for i in range(0,len(m1.getAuthors())):
         print({m1.getAuthors()[i].getFirstName()})
@@ -209,9 +211,7 @@ if __name__== '__main__':
     print(d1.getTitle())
     print(Dvd(1,"Java pour les Nuls en Dvd",10,2).getNetPrice())
     c1=Cd(0,"Java pour les Nuls en Cd",10,2)
-    tabM=[Media(0,"Java pour les Nuls",10), b1,c1,d1,Cd(0,"Java pour les Nuls en Cd",10,2)]
-    for elem in tabM:
-        print(elem.getTitle(),f"au prix de {elem.getNetPrice()}")
+    print(f"\r\nexemple de polymorphisme")
     tabM=[Media(0,"Java pour les Nuls",10), b1,c1,d1,Cd(0,"Java pour les Nuls en Cd",10,2)]
     for elem in tabM:
         print(elem.getTitle(),f"au prix de {elem.getNetPrice()}")
@@ -219,6 +219,7 @@ if __name__== '__main__':
     #############################################################################
     #trace d'execution#
     ###################
+    #exemple affichage
     #Java pour les Nuls
     #12.0
     #0
@@ -227,6 +228,8 @@ if __name__== '__main__':
     #Moustafa
     #Florent
     #Alex
+
+    #exemple de parcours
     #[Boris, Alex, Alex]
     #{'Boris'}
     #{'Alex'}
@@ -234,13 +237,12 @@ if __name__== '__main__':
     #10.5
     #Java pour les Nuls en Dvd
     #9.600000000000001
-    #Java pour les Nuls au prix de 12.0
-    #Java pour les Nuls en Cd au prix de 12.0
-    #Java pour les Nuls en Dvd au prix de 9.600000000000001
-    #Java pour les Nuls en Cd au prix de 12.0
+
+    #exemple de polymorphisme
     #Java pour les Nuls au prix de 12.0
     #Java pour les Nuls au prix de 10.5
     #Java pour les Nuls en Cd au prix de 12.0
     #Java pour les Nuls en Dvd au prix de 9.600000000000001
     #Java pour les Nuls en Cd au prix de 12.0
+
 
