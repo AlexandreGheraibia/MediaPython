@@ -160,9 +160,15 @@ if __name__== '__main__':
     a1=Author(0,"Boris",'nom')
     m1.getAuthors().append(a1)
     m1.getAuthors().append(Author(1,"Alex","nom"))
+    m1.getAuthors().append(Author(1,"Moustafa","nom"))
+    m1.getAuthors().append(Author(1,"Florent","nom"))
+    m1.getAuthors().append(Author(1,"Alex","nom"))
     for author in m1.getAuthors():
         print(author)
-
+    #####################################
+    #suppresion elem dans une liste
+    ####################################
+    del m1.getAuthors()[2:4]
     print(m1.getAuthors())
     for i in range(0,len(m1.getAuthors())):
         print({m1.getAuthors()[i].getFirstName()})
