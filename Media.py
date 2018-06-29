@@ -1,6 +1,6 @@
-############
-#parttern D#
-############
+##############
+# parttern D #
+##############
 #################################
 #        classe Media           #
 #################################
@@ -196,7 +196,7 @@ if __name__== '__main__':
     for author in m1.getAuthors():
         print(author)
     #####################################
-    #suppresion elem dans une liste
+    # suppresion d'elems dans une liste
     ####################################
     del m1.getAuthors()[2:4]
     print(m1.getAuthors())
@@ -217,7 +217,7 @@ if __name__== '__main__':
         print(elem.getTitle(),f"au prix de {elem.getNetPrice()}")
 
     #############################################################################
-    #trace d'execution#
+    # trace d'execution #
     ###################
     #exemple affichage
     #Java pour les Nuls
