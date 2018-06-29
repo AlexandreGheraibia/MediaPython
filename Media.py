@@ -61,9 +61,9 @@ class Book(Media):#la classe Book extend the Media class
     def getNbPages(self):
         return self.nbPages
 
-    ##################################################################################################################
-    #        Classe Cd            #
-    ###############################
+##################################################################################################################
+#        Classe Cd            #
+###############################
 
     class Cd(Media):#la classe Cd extend the Media class
         def __init(self,id,title,price,nbTracks):
