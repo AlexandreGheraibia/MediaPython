@@ -199,8 +199,8 @@ if __name__== '__main__':
     #suppresion elem dans une liste
     ####################################
     del m1.getAuthors()[2:4]
-    print(f"\r\nexemple de parcours")
     print(m1.getAuthors())
+    print(f"\r\nexemple de parcours")
     for i in range(0,len(m1.getAuthors())):
         print({m1.getAuthors()[i].getFirstName()})
 
@@ -228,9 +228,9 @@ if __name__== '__main__':
     #Moustafa
     #Florent
     #Alex
+    #[Boris, Alex, Alex]
 
     #exemple de parcours
-    #[Boris, Alex, Alex]
     #{'Boris'}
     #{'Alex'}
     #{'Alex'}
