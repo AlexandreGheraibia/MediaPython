@@ -48,51 +48,69 @@ class Media():
 ##################################################################################################################
 #        Classe Book            #
 #################################
+#la classe Book extend the Media class
+class Book(Media):
+    def getNetPrice(self):
+        return self.getPrice()*1.05 #the price is private hence we call the method price
 
-class Book(Media):#la classe Book extend the Media class
-    def __init__(self):
-        return
-    def __init(self,id,title,price,nbPages):
-        super().__init__(id,title,price)
+    def setNbPages(self,nbPages):
         self.nbPages=nbPages
 
-    def getNetPrice(self):
-        return self.price*1.05
+    def __init__(self):
+        return
+    def __init__(self,id,title,price):
+        super().__init__(id,title,price)
+
+    def __init__(self,id,title,price,nbPages):
+        super().__init__(id,title,price)
+        self.nbPages=nbPages
 
     def getNbPages(self):
         return self.nbPages
 
-##################################################################################################################
-#        Classe Cd            #
-###############################
+    ##################################################################################################################
+    #        Classe Cd            #
+    ###############################
     class Cd(Media):#la classe Cd extend the Media class
-        def __init__(self):
-            return
-        def __init(self,id,title,price,nbTracks):
-            super().__init__(id,title,price)
-            self.nbTracks=nbTracks
-
         def getNbTracks(self):
             return self.nbTracks
 
-        def setNbPages(self,nbTracks):
+        def setNbTracks(self,nbTracks):
+            self.nbTracks=nbTracks
+
+        def __init__(self):
+            return
+        def __init(self,id,title,price):
+            super().__init__(id,title,price)
+
+        def __init(self,id,title,price,nbTracks):
+            super().__init__(id,title,price)
             self.nbTracks=nbTracks
 ##################################################################################################################
 #        Classe Dvd            #
 ################################
 
 class Dvd(Media):#la classe Dvd extend the Media class
+    def setZone(self,zone):
+        self.zone=zone
+
+    def getZone(self):
+        return self.zone
+
     def __init__(self):
         return
+    def __init__(self,id,title,price):
+
+        super().__init__(id,title,price)
+
     def __init__(self,id,title,price,zone):
         super().__init__(id,title,price)
         self.zone=zone
 
     def getNetPrice(self):
-        return (self.price*1.2)*(1-0.2)
+        return (super().getPrice()*1.2)*(1.0-0.2)
 
-    def getZone(self):
-        return self.zone
+
 
 ################
 #  Pattern C   #
@@ -101,14 +119,6 @@ class Dvd(Media):#la classe Dvd extend the Media class
 #		classe Author		#
 #############################
 class Author:
-    def __init__(self):
-        return
-
-    def __init__(self,id,firstName,lastName):
-        self.id=id
-        self.firstName=firstName
-        self.lastName=lastName
-
     def getId(self):
         return self.Id
 
@@ -126,6 +136,14 @@ class Author:
 
     def getLastName(self):
         return self.lastName
+
+    def __init__(self):
+        return
+
+    def __init__(self,id,firstName,lastName):
+        self.id=id
+        self.firstName=firstName
+        self.lastName=lastName
 
     def __repr__(self):#toString
         return f"{self.firstName}"
@@ -180,3 +198,8 @@ if __name__== '__main__':
     for i in range(0,len(m1.getAuthors())):
         print({m1.getAuthors()[i].getFirstName()})
 
+    m1.getAuthors().append(Author(1,"Alex","nom"))
+    b1=Book(0,"Java pour les Nuls",10,120)
+    print(b1.getNetPrice())
+    print(Dvd(0,"Java pour les Nuls en Dvd",10,2).getTitle())
+    print(Dvd(1,"Java pour les Nuls en Dvd",10,2).getNetPrice())
