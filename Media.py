@@ -50,10 +50,11 @@ class Media():
 #################################
 
 class Book(Media):#la classe Book extend the Media class
+    def __init__(self):
+        return
     def __init(self,id,title,price,nbPages):
         super().__init__(id,title,price)
         self.nbPages=nbPages
-
 
     def getNetPrice(self):
         return self.price*1.05
@@ -64,19 +65,25 @@ class Book(Media):#la classe Book extend the Media class
 ##################################################################################################################
 #        Classe Cd            #
 ###############################
-
     class Cd(Media):#la classe Cd extend the Media class
+        def __init__(self):
+            return
         def __init(self,id,title,price,nbTracks):
             super().__init__(id,title,price)
             self.nbTracks=nbTracks
 
         def getNbTracks(self):
             return self.nbTracks
+
+        def setNbPages(self,nbTracks):
+            self.nbTracks=nbTracks
 ##################################################################################################################
 #        Classe Dvd            #
 ################################
 
 class Dvd(Media):#la classe Dvd extend the Media class
+    def __init__(self):
+        return
     def __init__(self,id,title,price,zone):
         super().__init__(id,title,price)
         self.zone=zone
