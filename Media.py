@@ -5,10 +5,14 @@
 #        classe Media           #
 #################################
 class Media():
-    #constructeur de media
+    count=0#  variable static
+    #constructeur par default de media
     def __init__(self):#le constructeur vide doit le premier constructeur
+        Media.count+=1
         return
+
     def __init__(self,id,title,price): #constructeur de media
+        Media.count+=1
         self.id=id
         self.title=title
         self.price=price
@@ -72,7 +76,7 @@ class Book(Media):
 ##################################################################################################################
 #        Classe Cd            #
 ###############################
- class Cd(Media):#la classe Cd extend the Media class
+class Cd(Media):#la classe Cd extend the Media class
     def getNbTracks(self):
         return self.nbTracks
 
