@@ -67,7 +67,7 @@ if __name__=="__main__":
 ####Display
     print(f"Theme:\t\n {t1.getName()}")
     for media in  t1.getMedias():
-        print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
+        print("\tTitle:",media.getTitle(),f" Price:%.2f"%(media.getNetPrice()))
     for att in m1[0].__dict__:
         if att=="title" or att=='id'or att=="price":
 ####Sort by att
@@ -75,37 +75,37 @@ if __name__=="__main__":
             print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
             t1.sortMedias()
             for media in  t1.getMedias():
-                print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
+                print("\tTitle:",media.getTitle(),f" rice:%.2f"%(media.getNetPrice()))
 ###display
 """
 run results:
 Theme:	
  Informatic
-	Title: Python pour les Nuls  Price: 12.0
-	Title: Python pour les Nuls le livre  Price: 10.5
-	Title: Python pour les Nuls le cd  Price: 12.0
-	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
-
-Theme sortBy title:	
- Informatic
-	Title: Python pour les Nuls  Price: 12.0
-	Title: Python pour les Nuls le cd  Price: 12.0
-	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
-	Title: Python pour les Nuls le livre  Price: 10.5
-
-Theme sortBy price:	
- Informatic
-	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
-	Title: Python pour les Nuls le livre  Price: 10.5
-	Title: Python pour les Nuls  Price: 12.0
-	Title: Python pour les Nuls le cd  Price: 12.0
+	Title: Python pour les Nuls  Price:12.00
+	Title: Python pour les Nuls le livre  Price:10.50
+	Title: Python pour les Nuls le cd  Price:12.00
+	Title: Python pour les Nuls le dvd  Price:9.60
 
 Theme sortBy id:	
  Informatic
-	Title: Python pour les Nuls  Price: 12.0
-	Title: Python pour les Nuls le livre  Price: 10.5
-	Title: Python pour les Nuls le cd  Price: 12.0
-	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
+	Title: Python pour les Nuls  rice:12.00
+	Title: Python pour les Nuls le livre  rice:10.50
+	Title: Python pour les Nuls le cd  rice:12.00
+	Title: Python pour les Nuls le dvd  rice:9.60
+
+Theme sortBy title:	
+ Informatic
+	Title: Python pour les Nuls  rice:12.00
+	Title: Python pour les Nuls le cd  rice:12.00
+	Title: Python pour les Nuls le dvd  rice:9.60
+	Title: Python pour les Nuls le livre  rice:10.50
+
+Theme sortBy price:	
+ Informatic
+	Title: Python pour les Nuls le dvd  rice:9.60
+	Title: Python pour les Nuls le livre  rice:10.50
+	Title: Python pour les Nuls  rice:12.00
+	Title: Python pour les Nuls le cd  rice:12.00
 
 Process finished with exit code 0
 """
