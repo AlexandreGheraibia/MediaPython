@@ -54,3 +54,20 @@ une fleur
          des teintes
          des pétales
          des épines
+         
+ une bidouille
+         a une idee
+         des tentatives
+         
+ un system
+         une portée, un milieur,une dicipline
+         des applications
+         une structure
+         des sous systemes
+une ville
+         une destination
+         un lieu
+         des adresses
+         des immeubles
+         des desstinations
+         
