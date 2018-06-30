@@ -1,12 +1,12 @@
 import Media
 import Classement
-#a sort
+#a Theme
 #   has a classement
 #   has medias
 ########################################################################################################################
 #Class Theme#
 #############
-class Sort:
+class Theme:
     def getName(this):
         return this.name
 
@@ -53,7 +53,7 @@ class Sort:
 ######
 if __name__=="__main__":
 ####Init
-    t1=Sort(0,"Informatic")
+    t1=Theme(0,"Informatic")
     t1.setClassement(Classement.ClassementByAttribute(0))
 ####Define compare function suptAt of infAt
     t1.getClassement().setCompare(Classement.supAt)
@@ -65,14 +65,14 @@ if __name__=="__main__":
 ####init
 
 ####Display
-    print(f"Sort:\t\n {t1.getName()}")
+    print(f"Theme:\t\n {t1.getName()}")
     for media in  t1.getMedias():
         print("\tTitle:",media.getTitle(),f"Price:%.2f"%(media.getNetPrice()))
     for att in m1[0].__dict__:
         if att=="title" or att=='id'or att=="price":
 ####Sort by att
             t1.getClassement().setAttribute(att)
-            print(f"\nSort sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
+            print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
             t1.sortMedias()
             for media in  t1.getMedias():
                 print("\tTitle:",media.getTitle(),f"Price:%.2f"%(media.getNetPrice()))
