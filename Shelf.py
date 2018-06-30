@@ -47,36 +47,73 @@ class Theme:
 
 
 if __name__=="__main__":
+####init
     t1=Theme(0,"Informatic")
-    t1.setClassement(Classement.ClassementMedia(0,True))
+    t1.setClassement(Classement.ClassementByAttribute(0))
     m1=t1.getMedias()
     m1.append(Media.Media(0,"Python pour les Nuls",10))
-    m1.append(Media.Book(0,"Python pour les Nuls le livre",10,120))
-    m1.append(Media.Cd(0,"Python pour les Nuls le cd",10,2))
-    m1.append(Media.Dvd(0,"Python pour les Nuls le dvd",10,3))
+    m1.append(Media.Book(1,"Python pour les Nuls le livre",10,120))
+    m1.append(Media.Cd(2,"Python pour les Nuls le cd",10,2))
+    m1.append(Media.Dvd(3,"Python pour les Nuls le dvd",10,3))
+
+####display
     print(f"Theme:\t\n {t1.getName()}")
     for media in  t1.getMedias():
         print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
 
-    print(f"\n {t1.getName()} sort by media")
-
+####sort by title
+    print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
     t1.sortMedias()
     for media in  t1.getMedias():
         print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
-"""
-    run result:
-    Theme:
-     Informatic
-        Title: Python pour les Nuls  Price: 12.0
-        Title: Python pour les Nuls le livre  Price: 10.5
-        Title: Python pour les Nuls le cd  Price: 12.0
-        Title: Python pour les Nuls le dvd  Price: 9.600000000000001
 
-     Informatic sort by media
-        Title: Python pour les Nuls  Price: 12.0
-        Title: Python pour les Nuls le cd  Price: 12.0
-        Title: Python pour les Nuls le dvd  Price: 9.600000000000001
-        Title: Python pour les Nuls le livre  Price: 10.5
+#####sort by price
+    t1.getClassement().setAttribute("price")
+    print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
+    t1.sortMedias()
+    for media in  t1.getMedias():
+        print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
+
+#####sort by id
+t1.getClassement().setAttribute("id")
+print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
+t1.sortMedias()
+for media in  t1.getMedias():
+    print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
+
+"""
+run result:
+Theme:	
+ Informatic
+	Title: Python pour les Nuls  Price: 12.0
+	Title: Python pour les Nuls le livre  Price: 10.5
+	Title: Python pour les Nuls le cd  Price: 12.0
+	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
+
+Theme sortBy title:	
+ Informatic
+	Title: Python pour les Nuls  Price: 12.0
+	Title: Python pour les Nuls le cd  Price: 12.0
+	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
+	Title: Python pour les Nuls le livre  Price: 10.5
+
+Theme sortBy price:	
+ Informatic
+	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
+	Title: Python pour les Nuls le livre  Price: 10.5
+	Title: Python pour les Nuls  Price: 12.0
+	Title: Python pour les Nuls le cd  Price: 12.0
+
+Theme sortBy id:	
+ Informatic
+	Title: Python pour les Nuls  Price: 12.0
+	Title: Python pour les Nuls le livre  Price: 10.5
+	Title: Python pour les Nuls le cd  Price: 12.0
+	Title: Python pour les Nuls le dvd  Price: 9.600000000000001
+
+Process finished with exit code 0
+
+
 
 """
 
