@@ -1,12 +1,12 @@
 import Media
 import Classement
-#a Theme
+#a Row
 #   has a classement
 #   has medias
 ########################################################################################################################
 #Class Theme#
 #############
-class Theme:
+class Row:
     def getName(this):
         return this.name
 
@@ -53,7 +53,7 @@ class Theme:
 ######
 if __name__=="__main__":
 ####Init
-    t1=Theme(0,"Informatic")
+    t1=Row(0,"Informatic")
     t1.setClassement(Classement.ClassementByAttribute(0))
 ####Define compare function suptAt of infAt
     t1.getClassement().setCompare(Classement.supAt)
@@ -65,42 +65,42 @@ if __name__=="__main__":
 ####init
 
 ####Display
-    print(f"Theme:\t\n {t1.getName()}")
+    print(f"Row:\t\n {t1.getName()}")
     for media in  t1.getMedias():
         print("\tTitle:",media.getTitle(),f"Price:%.2f"%(media.getNetPrice()))
     for att in m1[0].__dict__:
         if att=="title" or att=='id'or att=="price":
 ####Sort by att
             t1.getClassement().setAttribute(att)
-            print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
+            print(f"\nRow sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
             t1.sortMedias()
             for media in  t1.getMedias():
                 print("\tTitle:",media.getTitle(),f"Price:%.2f"%(media.getNetPrice()))
 ###display
 """
 run results:
-Sort:	
+Row:	
  Informatic
 	Title: Python pour les Nuls Price:12.00
 	Title: Python pour les Nuls le livre Price:10.50
 	Title: Python pour les Nuls le cd Price:12.00
 	Title: Python pour les Nuls le dvd Price:9.60
 
-Sort sortBy id:	
+Row sortBy id:	
  Informatic
 	Title: Python pour les Nuls Price:12.00
 	Title: Python pour les Nuls le livre Price:10.50
 	Title: Python pour les Nuls le cd Price:12.00
 	Title: Python pour les Nuls le dvd Price:9.60
 
-Sort sortBy title:	
+Row sortBy title:	
  Informatic
 	Title: Python pour les Nuls Price:12.00
 	Title: Python pour les Nuls le cd Price:12.00
 	Title: Python pour les Nuls le dvd Price:9.60
 	Title: Python pour les Nuls le livre Price:10.50
 
-Sort sortBy price:	
+Row sortBy price:	
  Informatic
 	Title: Python pour les Nuls le dvd Price:9.60
 	Title: Python pour les Nuls le livre Price:10.50
