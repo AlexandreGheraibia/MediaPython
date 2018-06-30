@@ -1,6 +1,4 @@
 from biblio import Classement, Media
-
-
 #a Row
 #   has a classement
 #   has medias

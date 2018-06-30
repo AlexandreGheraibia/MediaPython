@@ -2,10 +2,9 @@
 #   has elements
 #   has a compare of elements
 
-#a compare
 from biblio import Media
 
-
+#a compare
 def supAt(a,b):
     return a>b
 def infAt(a,b):
