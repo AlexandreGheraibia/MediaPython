@@ -70,4 +70,6 @@ une ville
          des adresses
          des immeubles
          des desstinations
+         des habitants
+         des routes
          
