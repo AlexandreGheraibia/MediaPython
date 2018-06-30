@@ -2,7 +2,7 @@
 # parttern D #
 ##############
 ########################################################################################################################
-#        classe Media           #
+#        Classe Media           #
 #################################
 class Media():
     count=0#  variable static
@@ -53,7 +53,7 @@ class Media():
 ########################################################################################################################
 #        Classe Book            #
 #################################
-#la classe Book extend the Media class
+#La classe Book extend the Media class
 class Book(Media):
     def getNetPrice(self):
         return self.getPrice()*1.05 #the price is private hence we call the method price
@@ -76,7 +76,7 @@ class Book(Media):
 ########################################################################################################################
 #        Classe Cd            #
 ###############################
-class Cd(Media):#la classe Cd extend the Media class
+class Cd(Media):#La classe Cd extend the Media class
     def getNbTracks(self):
         return self.nbTracks
 
@@ -120,7 +120,7 @@ class Dvd(Media):#la classe Dvd extend the Media class
 #  Pattern C   #
 ################
 ########################################################################################################################
-#		classe Author		#
+#		Classe Author		#
 #############################
 class Author:
     def getId(self):
@@ -182,7 +182,7 @@ class Publisher:
         return f"{self.getName()}"
 
 ########################################################################################################################
-#main#
+#Main#
 ######
 """
 if __name__== '__main__':

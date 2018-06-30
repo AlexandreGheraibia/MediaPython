@@ -100,7 +100,7 @@ class ClassementByAttribute(Classement):
             return elem.getNetPrice()
 
 ########################################################################################################################
-#main#
+#Main#
 ######
 if __name__=="__main__":
     c=Classement(0)

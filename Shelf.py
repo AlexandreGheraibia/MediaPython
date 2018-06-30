@@ -4,7 +4,7 @@ import Classement
 #   has a classement
 #   has medias
 ########################################################################################################################
-#class Theme#
+#Class Theme#
 #############
 class Theme:
     def getName(this):
@@ -49,43 +49,34 @@ class Theme:
         this.setMedias(this.getClassement().getElements())
 
 ########################################################################################################################
-#main#
+#Main#
 ######
 if __name__=="__main__":
-####init
+####Init
     t1=Theme(0,"Informatic")
     t1.setClassement(Classement.ClassementByAttribute(0))
+####Define compare function suptAt of infAt
+    t1.getClassement().setCompare(Classement.supAt)
     m1=t1.getMedias()
     m1.append(Media.Media(0,"Python pour les Nuls",10))
     m1.append(Media.Book(1,"Python pour les Nuls le livre",10,120))
     m1.append(Media.Cd(2,"Python pour les Nuls le cd",10,2))
     m1.append(Media.Dvd(3,"Python pour les Nuls le dvd",10,3))
+####init
 
-####display
+####Display
     print(f"Theme:\t\n {t1.getName()}")
     for media in  t1.getMedias():
         print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
-
-####sort by title
-    print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
-    t1.sortMedias()
-    for media in  t1.getMedias():
-        print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
-
-#####sort by price
-    t1.getClassement().setAttribute("price")
-    print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
-    t1.sortMedias()
-    for media in  t1.getMedias():
-        print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
-
-#####sort by id
-t1.getClassement().setAttribute("id")
-print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
-t1.sortMedias()
-for media in  t1.getMedias():
-    print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
-
+    for att in m1[0].__dict__:
+        if att=="title" or att=='id'or att=="price":
+####Sort by att
+            t1.getClassement().setAttribute(att)
+            print(f"\nTheme sortBy {t1.getClassement().getAttribute()}:\t\n {t1.getName()}")
+            t1.sortMedias()
+            for media in  t1.getMedias():
+                print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
+###display
 """
 run result:
 Theme:	
