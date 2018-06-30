@@ -7,5 +7,5 @@ un theme a
            des medias,
 une etagère a
      un theme
-     des media
+     des étages
 
