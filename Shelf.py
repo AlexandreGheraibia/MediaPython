@@ -1,8 +1,11 @@
 import Media
 import Classement
-#un theme
-#a un classement
-#des media
+#a theme
+#   has a classement
+#   has medias
+########################################################################################################################
+#class Theme#
+#############
 class Theme:
     def getName(this):
         return this.name
@@ -45,7 +48,9 @@ class Theme:
         this.getClassement().triElements()
         this.setMedias(this.getClassement().getElements())
 
-
+########################################################################################################################
+#main#
+######
 if __name__=="__main__":
 ####init
     t1=Theme(0,"Informatic")

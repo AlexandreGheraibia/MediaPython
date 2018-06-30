@@ -1,6 +1,6 @@
 #a classement
-#has elements
-#has a compare of elements
+#   has elements
+#   has a compare of elements
 
 #a compare
 import Media
@@ -11,6 +11,9 @@ def infAt(a,b):
 def equalAt(a,b):
     return a==b
 
+######################################################################################################################
+# Classement#
+#############
 class Classement:
     #get,set
     def getId(this,id):
@@ -54,7 +57,11 @@ class Classement:
                     this.getElements()[i]=this.getElements()[j]
                     this.getElements()[j]=tmp
 
+######################################################################################################################
+# ClassementByAttribute #
+#########################
 class ClassementByAttribute(Classement):
+
     def getAttribute(this):
         return this.attribute
 
@@ -68,14 +75,21 @@ class ClassementByAttribute(Classement):
         this.attribute="title"
         super().__init__(id)
 
+    def exchangeElement(this,ind1,ind2):
+        tmp=(this.getElements()[ind1])
+        (this.getElements()[ind1])=(this.getElements()[ind2])
+        (this.getElements()[ind2])=tmp
+
+    def triSubElem(this,indElemToCompare):
+        for j in range(indElemToCompare+1,len(this.elements)):
+            att1=this.getAttributeElement(this.getElements()[indElemToCompare])
+            att2=this.getAttributeElement(this.getElements()[j])
+            if this.getCompare()(att1,att2):
+                this.exchangeElement(indElemToCompare,j)
+
     def triElements(this):
         for i in range(0,len(this.getElements())-1):
-            for j in range(i+1,len(this.elements)):
-                if this.getCompare()(this.getAttributeElement(this.getElements()[i]),this.getAttributeElement(this.getElements()[j])):
-                    tmp=(this.getElements()[i])
-                    (this.getElements()[i])=(this.getElements()[j])
-                    (this.getElements()[j])=tmp
-
+            this.triSubElem(i)
 
     def getAttributeElement(this,elem):
         if this.getAttribute()=="title":
@@ -85,8 +99,9 @@ class ClassementByAttribute(Classement):
         elif this.getAttribute()=="price":
             return elem.getNetPrice()
 
-
-
+########################################################################################################################
+#main#
+######
 if __name__=="__main__":
     c=Classement(0)
     c.setElements([1,2,4,3,5,9,7,8,6])
@@ -100,5 +115,3 @@ if __name__=="__main__":
     c.setElements(m1)
     for elem in c.getElements():
             print(elem.__dict__)
-
-
