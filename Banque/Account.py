@@ -7,19 +7,21 @@ from Banque.Customer import Customer
 import datetime
 
 class Account:
-
+    """
+    si id generer à l'exterieur
+    """
     def setId(this,id):
         this.id=id
 
     def getId(this):
         return this.id
 
-    def getName(this):
+    """def getName(this):
         return this.name
 
     def setName(this,name):
         return this.name
-
+    """
     def getSold(this):
         return this.sold
     """
@@ -47,6 +49,8 @@ class Account:
         this.transactions=[]
         this.createThe=datetime.now
 
-
     def __repr__(this):
         return f"{name}"
+
+if __name__=="__main__":
+
