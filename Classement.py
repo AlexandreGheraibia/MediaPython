@@ -62,8 +62,6 @@ class Classement:
                     this.getElements()[i]=this.getElements()[j]
                     this.getElements()[j]=tmp
 
-
-
 class ClassementMedia(Classement):
     def  __init__(this):
            return

@@ -63,7 +63,6 @@ if __name__=="__main__":
     t1.sortMedias()
     for media in  t1.getMedias():
         print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
-
 """
     run result:
     Theme:
