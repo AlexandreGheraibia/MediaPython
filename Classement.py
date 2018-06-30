@@ -49,13 +49,24 @@ class Classement:
     def __repr__(this):
         return this.compare
 
+    def exchangeElement(this,ind1,ind2):
+        tmp=(this.getElements()[ind1])
+        (this.getElements()[ind1])=(this.getElements()[ind2])
+        (this.getElements()[ind2])=tmp
+
+    def triSubElems(this,indElem):
+        for j in range(indElem+1,len(this.elements)):
+            val1=this.getValueElement(this.getElements()[indElem])
+            val2=this.getValueElement(this.getElements()[j])
+            if this.getCompare()(val1,val2):
+                this.exchangeElement(indElem,j)
+
     def triElements(this):
         for i in range(0,len(this.getElements())-1):
-            for j in range(i+1,len(this.elements)):
-                 if this.getCompare()(this.getElements()[i],this.getElements()[j]):
-                    tmp=this.getElements()[i]
-                    this.getElements()[i]=this.getElements()[j]
-                    this.getElements()[j]=tmp
+            this.triSubElems(i)
+
+    def getValueElement(this,elem):
+        return elem
 
 ######################################################################################################################
 # ClassementByAttribute #
@@ -75,23 +86,7 @@ class ClassementByAttribute(Classement):
         this.attribute="title"
         super().__init__(id)
 
-    def exchangeElement(this,ind1,ind2):
-        tmp=(this.getElements()[ind1])
-        (this.getElements()[ind1])=(this.getElements()[ind2])
-        (this.getElements()[ind2])=tmp
-
-    def triSubElem(this,indElemToCompare):
-        for j in range(indElemToCompare+1,len(this.elements)):
-            att1=this.getAttributeElement(this.getElements()[indElemToCompare])
-            att2=this.getAttributeElement(this.getElements()[j])
-            if this.getCompare()(att1,att2):
-                this.exchangeElement(indElemToCompare,j)
-
-    def triElements(this):
-        for i in range(0,len(this.getElements())-1):
-            this.triSubElem(i)
-
-    def getAttributeElement(this,elem):
+    def getValueElement(this,elem):
         if this.getAttribute()=="title":
             return elem.getTitle()
         elif this.getAttribute()=="id":
@@ -105,7 +100,7 @@ class ClassementByAttribute(Classement):
 if __name__=="__main__":
     c=Classement(0)
     c.setElements([1,2,4,3,5,9,7,8,6])
-    c.triElements()
+    ##print(c.getElements())
     m1=[]
     m1.append(Media.Media(0,"Python pour les Nuls",10))
     m1.append(Media.Book(0,"Python pour les Nuls le livre",10,120))
@@ -114,4 +109,4 @@ if __name__=="__main__":
     print(c.getElements());
     c.setElements(m1)
     for elem in c.getElements():
-            print(elem.__dict__)
+        print(elem.__dict__)
