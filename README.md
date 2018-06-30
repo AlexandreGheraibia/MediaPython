@@ -2,10 +2,10 @@
 un media a 
          un publisher
          des authors,
-un rangemeent a 
+une rangée a 
            un classement
            des medias,
-un etage a
-     une categorie
-     des rangements
-
+un etagère a
+         une categorie
+         des rangées
+         
