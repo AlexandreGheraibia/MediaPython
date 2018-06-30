@@ -182,7 +182,7 @@ class Publisher:
         return f"{self.getName()}"
 
 #########################################################################################################
-
+"""
 if __name__== '__main__':
     m1=Media(0,"Java pour les Nuls",10)
     print(f"exemple affichage")
@@ -244,5 +244,5 @@ if __name__== '__main__':
     #Java pour les Nuls en Cd au prix de 12.0
     #Java pour les Nuls en Dvd au prix de 9.600000000000001
     #Java pour les Nuls en Cd au prix de 12.0
-
+"""
 
