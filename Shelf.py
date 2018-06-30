@@ -78,7 +78,7 @@ if __name__=="__main__":
                 print("\tTitle:",media.getTitle()," Price:",media.getNetPrice())
 ###display
 """
-run result:
+result run :
 Theme:	
  Informatic
 	Title: Python pour les Nuls  Price: 12.0
