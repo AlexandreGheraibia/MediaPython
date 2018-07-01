@@ -15,7 +15,6 @@ un train a
          des vagons
          des stations
 un vagon a
-         une sortes de marchandise
          un couloir
          un role
          un predecédent
