@@ -4,7 +4,10 @@
 ########################################################################################################################
 #        Classe Media           #
 #################################
-class Media():
+
+import abc #import the abstract modul
+
+class Media(metaclass=abc.ABCMeta):
     count=0#  variable static
     #constructeur par default de media
     def __init__(self):#le constructeur vide doit le premier constructeur
@@ -34,8 +37,9 @@ class Media():
     def getPrice(self):
         return self.price
 
-    def getNetPrice(self):
-        return self.price*1.2
+    @abc.abstractmethod #define a abstract method
+    def getNetPrice(self):...
+
 
     def getAuthors(self):
         return self.authors
@@ -85,12 +89,16 @@ class Cd(Media):#La classe Cd extend the Media class
 
     def __init__(self):
         return
+
     def __init__(self,id,title,price):
         super().__init__(id,title,price)
 
     def __init__(self,id,title,price,nbTracks):
         super().__init__(id,title,price)
         self.nbTracks=nbTracks
+
+    def getNetPrice(self):
+         return (self.getPrice()*1.2)
 
 ########################################################################################################################
 #        Classe Dvd            #
