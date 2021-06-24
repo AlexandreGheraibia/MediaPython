@@ -5,10 +5,10 @@ un media a
 une rangée a 
            un classement
            des medias,
-un etagère a
+une etagère a
          une categorie
          des rangées
-un train a
+une train a
          une voie
          un itinéraire
          un horaire
@@ -26,7 +26,7 @@ un vagon a
          des marchandises
          
 un fleuriste
-         a des bouquet
+         a des bouquets
          un vendeur
 un bouquet
          a des fleurs
@@ -37,7 +37,7 @@ un bouquet
          
 un ensemble
          une definition
-         des propriete
+         des proprietes
          des groupes
          des elements
 un genre
